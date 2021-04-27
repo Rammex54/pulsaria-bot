@@ -2,21 +2,21 @@ const Discord = require("discord.js");
 
 const Client = new Discord.Client;
 
-const prefix = "n!";
+const prefix = "p!";
 
 Client.on("ready", () => {
-    console.log("Nesolia Modération est prêt!");
+    console.log("Pulsaria Modération est prêt!");
+    Client.user.setActivity("mc.pulsaria.eu", {type: "PLAYING"});
 });
 
 Client.on("guildMemberAdd", member => {
-  member.guild.channels.cache.get("835951354437435412").send(new Discord.MessageEmbed()
+  member.guild.channels.cache.get("813865256777678858").send(new Discord.MessageEmbed()
     .setDescription(`${member} nous a rejoinds. Nous sommes maintenant ${member.guild.memberCount}! 🎉`)
     .setColor("#00ff00"))
-  member.roles.add("835948216117624952")
 });
 
 Client.on("guildMemberRemove", member => {
-  member.guild.channels.cache.get("835951354437435412").send(new Discord.MessageEmbed() 
+  member.guild.channels.cache.get("813865256777678858").send(new Discord.MessageEmbed() 
   .setDescription(`${member.user.tag} a quitté le serveur mais nous restont fort !`)
   .setColor("#ff0000"))
 });
@@ -29,10 +29,10 @@ Client.on("message", message =>{
   var embed = new Discord.MessageEmbed()
       .setColor("#0099ff")
       .setTitle("**HELP**")
-      .addField("n!ban","sert a ban un joueur")
-      .addField("n!kick","sert a kick un membre")
-      .addField("n!clear","sert a clear les message")
-      .setFooter("Nesolia","https://cdn.discordapp.com/attachments/830489270375809064/836574354393268264/logo_128x128.png")
+      .addField("p!ban","sert a ban un joueur")
+      .addField("p!kick","sert a kick un membre")
+      .addField("p!clear","sert a clear les message")
+      .setFooter("Pulsaria","https://cdn.discordapp.com/attachments/832652353844936704/836682008683741184/pulsarianouveau_logo.png")
       .setTimestamp()
   }
 
